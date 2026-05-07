@@ -76,14 +76,14 @@ class Mrkv_NovaPay_Gateway extends WC_Payment_Gateway {
 					<p>
 						<?php echo __( 'Isn’t good enough for a 5', 'morkva-novapay' ) . ' '; ?>
 						<img src="<?php echo plugins_url( '../assets/images/star.svg', __FILE__ ); ?>" alt="Star" alt="Star">? 
-						<?php echo __( 'Contact us via the widget on our website, or check out', 'morkva-novapay' ) . ' <a href="https://docs.morkva.co.ua/uk?utm_source=plugin&utm_medium=sidebar&utm_campaign=novapay_free" target="blanc">' . __( 'documantation', 'morkva-novapay' ) . '</a>'; ?>
+						<?php echo __( 'Contact us via the widget on our website, or check out', 'morkva-novapay' ) . ' <a href="https://docs.morkva.co.ua/uk?utm_source=plugin&utm_medium=sidebar&utm_campaign=novapay_free" target="blanc">' . __( 'documentation', 'morkva-novapay' ) . '</a>'; ?>
 					</p>
 					<div class="mrkv-btns-line-sidebar" style="display: flex;gap: 4px;">
 						<a class="button button-primary" href="https://morkva.co.ua/?utm_source=plugin&utm_medium=sidebar&utm_campaign=novapay_free" target="blanc">
 							<?php echo __( 'Go to the website', 'morkva-novapay' ); ?>
 						</a>
 						<a class="button" href="https://docs.morkva.co.ua/uk?utm_source=plugin&utm_medium=sidebar&utm_campaign=novapay_free" target="blanc">
-							<?php echo __( 'Documantation', 'morkva-novapay' ); ?>
+							<?php echo __( 'Documentation', 'morkva-novapay' ); ?>
 						</a>
 					</div>
 				</div>

@@ -46,7 +46,7 @@ For more context see our [documentation page](https://docs.morkva.co.ua/uk/plugi
 
 = For developers =
 
-Plugin Documentation: https://morkva.helpcrunch.com/knowledge-base/uk/articles/173
+Plugin Documentation: [https://morkva.helpcrunch.com/knowledge-base/uk/articles/173](https://morkva.helpcrunch.com/knowledge-base/uk/articles/173)
 
 == Frequently Asked Questions ==
 
