@@ -1,11 +1,11 @@
 === morkva NovaPay ===
-Contributors: bandido
-Tags: woocommerce, novapay, Нова Пошта, Новая Почта
+Contributors: bandido, dpmine
+Tags: woocommerce, novapay
 Tested up to: 6.9
 Requires PHP: 7.4
 Stable tag: 0.2.0
-License: GPLv3 or later
-License URI: https://www.gnu.org/licenses/gpl-3.0.html
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 NovaPay payment gateway for WooCommerce. Supports HPOS, Block Checkout, postback verification, and a hardened thank-you sync.
 
@@ -42,6 +42,12 @@ morkva NovaPay integrates the NovaPay Internet Acquiring API as a WooCommerce pa
 5. Copy the **Postback URL** shown in the settings and paste it into your NovaPay merchant cabinet as the callback endpoint.
 6. (Optional) Enable **Test mode** while integrating with the sandbox environment.
 
+For more context see our [documentation page](https://docs.morkva.co.ua/uk/plugins/nalashtuvannia-plaghina-morkva-nova-pay).
+
+= For developers =
+
+Plugin Documentation: https://morkva.helpcrunch.com/knowledge-base/uk/articles/173
+
 == Frequently Asked Questions ==
 
 = How do I obtain merchant credentials? =
@@ -55,7 +61,6 @@ Not in this release. Refunds are planned.
 
 = What happens if the postback is delayed or lost? =
 On the order-received page the plugin queries NovaPay's `get-status` endpoint and updates the order accordingly, so the status is synced even when the server-to-server postback is delayed, blocked, or lost.
-
 
 == Changelog ==
 
