@@ -1,0 +1,8 @@
+msgid "Enable/Disable"
+msgstr "Увімкнути/Вимкнути"
+
+msgid "Title"
+msgstr "Назва"
+
+msgid "NovaPay"
+msgstr "NovaPay"
