@@ -2,13 +2,14 @@
 /**
  * Plugin Name: morkva NovaPay
  * Description: NovaPay payment gateway for WooCommerce.
- * Version: 0.2.0
+ * Version: 0.2.1
  * Author: morkva
  * Author URI: https://morkva.co.ua
  * Text Domain: morkva-novapay
  * Domain Path: /languages
  * Requires at least: 6.5
  * Requires PHP:      7.4
+ * Tested up to: 7.1
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
@@ -18,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 define( 'MRKV_NOVAPAY_FILE', __FILE__ );
-define( 'MRKV_NOVAPAY_VERSION', '0.2.0' );
+define( 'MRKV_NOVAPAY_VERSION', '0.2.1' );
 
 add_action( 'before_woocommerce_init', function () {
 	if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {

@@ -63,9 +63,9 @@ class Mrkv_NovaPay_Gateway extends WC_Payment_Gateway {
 						<img src="<?php echo plugins_url( '../assets/images/star.svg', __FILE__ ); ?>" alt="Star" alt="Star">
 						<img src="<?php echo plugins_url( '../assets/images/star.svg', __FILE__ ); ?>" alt="Star" alt="Star">
 						<img src="<?php echo plugins_url( '../assets/images/star.svg', __FILE__ ); ?>" alt="Star" alt="Star">
-						<?php echo __( 'review at', 'morkva-novapay' ) . ' <a href="https://wordpress.org/plugins/morkva-novapay/" target="blanc">WordPress.org</a>'; ?>
+						<?php echo __( 'review at', 'morkva-novapay' ) . ' <a href="https://wordpress.org/plugins/morkva-novapay/" target="_blank">WordPress.org</a>'; ?>
 					</p>
-					<a class="button button-primary" href="https://wordpress.org/plugins/morkva-novapay/" target="blanc">
+					<a class="button button-primary" href="https://wordpress.org/plugins/morkva-novapay/" target="_blank">
 						<?php echo __( 'Leave', 'morkva-novapay' ) . ' '; ?>
 						<img src="<?php echo plugins_url( '../assets/images/star.svg', __FILE__ ); ?>" alt="Star" alt="Star">
 						<img src="<?php echo plugins_url( '../assets/images/star.svg', __FILE__ ); ?>" alt="Star" alt="Star">
@@ -76,13 +76,13 @@ class Mrkv_NovaPay_Gateway extends WC_Payment_Gateway {
 					<p>
 						<?php echo __( 'Isn’t good enough for a 5', 'morkva-novapay' ) . ' '; ?>
 						<img src="<?php echo plugins_url( '../assets/images/star.svg', __FILE__ ); ?>" alt="Star" alt="Star">? 
-						<?php echo __( 'Contact us via the widget on our website, or check out', 'morkva-novapay' ) . ' <a href="https://docs.morkva.co.ua/uk?utm_source=plugin&utm_medium=sidebar&utm_campaign=novapay_free" target="blanc">' . __( 'documentation', 'morkva-novapay' ) . '</a>'; ?>
+						<?php echo __( 'Contact us via the widget on our website, or check out', 'morkva-novapay' ) . ' <a href="https://docs.morkva.co.ua/uk?utm_source=plugin&utm_medium=sidebar&utm_campaign=novapay_free" target="_blank">' . __( 'documentation', 'morkva-novapay' ) . '</a>'; ?>
 					</p>
 					<div class="mrkv-btns-line-sidebar" style="display: flex;gap: 4px;">
-						<a class="button button-primary" href="https://morkva.co.ua/?utm_source=plugin&utm_medium=sidebar&utm_campaign=novapay_free" target="blanc">
+						<a class="button button-primary" href="https://morkva.co.ua/?utm_source=plugin&utm_medium=sidebar&utm_campaign=novapay_free" target="_blank">
 							<?php echo __( 'Go to the website', 'morkva-novapay' ); ?>
 						</a>
-						<a class="button" href="https://docs.morkva.co.ua/uk?utm_source=plugin&utm_medium=sidebar&utm_campaign=novapay_free" target="blanc">
+						<a class="button" href="https://docs.morkva.co.ua/uk?utm_source=plugin&utm_medium=sidebar&utm_campaign=novapay_free" target="_blank">
 							<?php echo __( 'Documentation', 'morkva-novapay' ); ?>
 						</a>
 					</div>
@@ -91,29 +91,49 @@ class Mrkv_NovaPay_Gateway extends WC_Payment_Gateway {
 					<h3 style="margin-top: 0;"><?php echo __( 'Other free plugins', 'morkva-novapay' ); ?></h3>
 					<p><?php echo __( 'All our plugins are cross-compatible', 'morkva-novapay' ); ?></p>
 					<?php
-						$response = wp_remote_get( 'https://morkva.co.ua/wp-json/pluginManagement/v2', array(
-							'headers' => array(
-							),
-							'timeout' => 30,
-							'redirection' => 5,
-							'httpversion' => '1.1',
-							'sslverify' => true
-						));
+						$mrkv_novapay_transient_key = 'morkva_plugin_management_data';
+						$mrkv_novapay_cached_data = get_transient( $mrkv_novapay_transient_key );
+						if ( false !== $mrkv_novapay_cached_data ) {
+							$mrkv_novapay_data = ( 'error' === $mrkv_novapay_cached_data ) ? false : $mrkv_novapay_cached_data;
+						} else {
+							
+							$mrkv_novapay_response = wp_remote_get( 'https://morkva.co.ua/wp-json/pluginManagementPro/v2', array(
+								'headers'     => array(),
+								'timeout'     => 6,
+								'redirection' => 5,
+								'httpversion' => '1.1',
+								'sslverify'   => true,
+							) );
 
-						$mrkv_mono_response_data = $response['body'] ? json_decode( $response['body'], true ) : null;
-						$mrkv_mono_plugins = $mrkv_mono_response_data['plugins'] ?? [];
+							if ( is_wp_error( $mrkv_novapay_response ) || 200 !== wp_remote_retrieve_response_code( $mrkv_novapay_response ) ) {
+								set_transient( $mrkv_novapay_transient_key, 'error', HOUR_IN_SECONDS );
+								$mrkv_novapay_data = false;
+							} else {
+								$mrkv_novapay_body = wp_remote_retrieve_body( $mrkv_novapay_response );
+								$mrkv_novapay_data = json_decode( $mrkv_novapay_body, true );
 
-						if(!empty($mrkv_mono_plugins))
+								if ( empty( $mrkv_novapay_data ) || ! is_array( $mrkv_novapay_data ) ) {
+									set_transient( $mrkv_novapay_transient_key, 'error', HOUR_IN_SECONDS );
+									$mrkv_novapay_data = false;
+								} else {
+									set_transient( $mrkv_novapay_transient_key, $mrkv_novapay_data, 12 * HOUR_IN_SECONDS );
+								}
+							}
+						}
+
+						$mrkv_novapay_plugins = ( is_array( $mrkv_novapay_data ) && isset( $mrkv_novapay_data['plugins'] ) ) ? $mrkv_novapay_data['plugins'] : [];
+
+						if(!empty($mrkv_novapay_plugins))
 						{
 							?>
 								<ul style="list-style: disc;padding-left: 17px;">
 									<?php
-										foreach($mrkv_mono_plugins as $plugin_slug => $plugin_data)
+										foreach($mrkv_novapay_plugins as $plugin_slug => $plugin_data)
 										{
 											if($plugin_slug == 'morkva-novapay'){ continue; }
 											?>
 												<li>
-													<a style="margin-bottom:5px;" href="<?php echo $plugin_data['url'] ?? ''; ?>?utm_source=plugin&utm_medium=sidebar&utm_campaign=novapay_free" target="blanc" class="plugin_line"><?php echo $plugin_data['label'] ?? ''; ?></a>
+													<a style="margin-bottom:5px;" href="<?php echo $plugin_data['url'] ?? ''; ?>?utm_source=plugin&utm_medium=sidebar&utm_campaign=novapay_free" target="_blank" class="plugin_line"><?php echo $plugin_data['label'] ?? ''; ?></a>
 													<span>- 
 													<?php 
 														$current_desc = (strpos(get_user_locale(), 'uk') === 0) 
