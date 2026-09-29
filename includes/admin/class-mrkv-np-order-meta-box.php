@@ -5,6 +5,18 @@ class Mrkv_NP_Order_Meta_Box {
 
 	public static function register(): void {
 		add_action( 'add_meta_boxes', [ __CLASS__, 'add' ], 30, 2 );
+		add_action('admin_enqueue_scripts', [__CLASS__, 'mrkv_novapay_styles_and_scripts']);
+	}
+
+	public static function mrkv_novapay_styles_and_scripts(){
+		$section = filter_input( INPUT_GET, 'section', FILTER_DEFAULT );
+    
+		$allowed_sections = array( 'mrkv_novapay' );
+		
+		if ( in_array( $section, $allowed_sections, true ) ) {
+			wp_enqueue_style('admin-mrkv-novapay', plugin_dir_url(MRKV_NOVAPAY_FILE) . 'assets/css/morkva-novapay-admin.css', array(), LIQPAY_VERSION);
+			wp_enqueue_script('admin-mrkv-novapay', plugin_dir_url(MRKV_NOVAPAY_FILE) . 'assets/js/admin/admin-mrkv-novapay.js', array('jquery'), LIQPAY_VERSION, true);
+		}
 	}
 
 	public static function add( $screen_id, $post_or_order ): void {

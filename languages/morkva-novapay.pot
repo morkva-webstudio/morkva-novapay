@@ -1,112 +1,108 @@
-# Translation of Plugins - morkva NovaPay - Stable (latest release) in Ukrainian
-# This file is distributed under the same license as the Plugins - morkva NovaPay - Stable (latest release) package.
+#, fuzzy
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-09-29 07:21+0000\n"
+"Project-Id-Version: morkva NovaPay\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-29 06:44+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % "
-"10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
 "X-Generator: Loco https://localise.biz/\n"
-"Language: uk\n"
-"Project-Id-Version: Plugins - morkva NovaPay - Stable (latest release)\n"
-"Language-Team: Українська\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-29 07:21+0000\n"
-"Last-Translator: \n"
 "X-Loco-Version: 2.8.8; wp-7.1.2; php-8.4.24\n"
-"X-Loco-Fallback: uk\n"
-"X-Loco-Template: ../../languages/plugins/morkva-novapay-uk.po\n"
-"X-Loco-Template-Mode: PO,JSON"
+"X-Domain: morkva-novapay"
 
 #: includes/class-morkva-novapay-gateway.php:94
 msgid "All our plugins are cross-compatible"
-msgstr "Всі наші плагіни сумісні між собою"
+msgstr ""
 
 #: includes/admin/class-mrkv-np-order-meta-box.php:61
 msgid "Approval"
-msgstr "Підтвердження"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:289
 msgid "Auto-redirect delay (seconds)"
-msgstr "Затримка авторедіректу (сек)"
+msgstr ""
 
 #: includes/admin/class-mrkv-np-order-meta-box.php:65
 msgid "Card"
-msgstr "Картка"
+msgstr ""
 
 #: includes/admin/class-mrkv-np-order-meta-box.php:68
 msgid "Card country"
-msgstr "Країна картки"
+msgstr ""
 
 #: includes/admin/class-mrkv-np-order-meta-box.php:82
 msgid "Card details"
-msgstr "Картка"
+msgstr ""
 
 #: includes/admin/class-mrkv-np-order-meta-box.php:66
 msgid "Card type"
-msgstr "Тип карти"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:81
 msgid "Contact us via the widget on our website, or check out"
-msgstr "Напишіть нам через віджет на сайті, або перегляньте"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:335
 msgid "Custom logo url"
-msgstr "Власна URL-адреса логотипу"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:342
 msgid "Debug log"
-msgstr "Журнал налагодження"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:256
 msgid "Description"
-msgstr "Опис"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:258
 msgid "Description shown to the customer at checkout."
-msgstr "Опис які бачать покупці на сайті."
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:88
 msgid "Documentation"
-msgstr "Документація"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:81
 msgid "documentation"
-msgstr "документація"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:243
 msgid "Enable / Disable"
-msgstr "Увімкнути / Вимкнути"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:245
 msgid "Enable NovaPay"
-msgstr "Увімкнути NovaPay"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:264
 msgid "Enable sandbox (test) environment"
-msgstr "Увімкнути тестове середовище"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:338
 msgid "Enter full url to image"
-msgstr "Введіть повне посилання на зображення"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:313
 msgid "For black background"
-msgstr "Для темного фону"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:307
 msgid "For white background"
-msgstr "Для білого фону"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:85
 msgid "Go to the website"
-msgstr "Перейти на сайт"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:329
 msgid "Hide logo"
-msgstr "Приховати логотип"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:291
 msgid ""
@@ -114,192 +110,176 @@ msgid ""
 "redirected back to the order-received page. 0 = instant. Lower values give "
 "better analytics attribution (purchase event fires sooner)."
 msgstr ""
-"Скільки часу покупець знаходиться на сторінці підтвердження оплати NovaPay "
-"перед тим, як бути перенаправленим на сторінку подяки вашого сайту. 0 = "
-"миттєво. Чим менше тим краще (подія покупки відпрацює швидше)."
 
 #. Author URI of the plugin
 msgid "https://morkva.co.ua"
-msgstr "https://morkva.co.ua"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:331
 msgid ""
 "If checked, Novapay logo or custom logo will not be displayed by the payment "
 "method title"
 msgstr ""
-"Якщо галочка встановлена, логотип Novapay або користувацький логотип не буде "
-"відображатися в назві способу оплати"
 
 #: includes/class-morkva-novapay-gateway.php:323
 msgid "Image height(px)"
-msgstr "Висота зображення(px)"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:305
 msgid "Image style"
-msgstr "Стиль зображення"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:79
 msgid "Isn’t good enough for a 5"
-msgstr "Не “тягне” на 5"
+msgstr ""
 
 #: includes/admin/class-mrkv-np-order-meta-box.php:67
 msgid "Issuer bank"
-msgstr "Банк-емітент"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:71
 msgid "Leave"
-msgstr "Залишити"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:60
 msgid "Like this plugin?"
-msgstr "Сподобався плагін?"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:344
 msgid ""
 "Log API requests and postbacks to WooCommerce → Status → Logs (source: "
 "morkva-novapay)."
 msgstr ""
-"Логує запити та постбеки до WooCommerce → Статус → Журнали (джерело: morkva-"
-"novapay)."
 
 #: includes/class-morkva-novapay-gateway.php:269
 msgid "Merchant ID"
-msgstr "Merchant ID"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:275
 msgid "Merchant private key (PEM)"
-msgstr "Приватний ключ мерчанта (PEM)"
+msgstr ""
 
 #. Author of the plugin
 msgid "morkva"
-msgstr "morkva"
+msgstr ""
 
 #. Name of the plugin
 #: includes/admin/class-mrkv-np-order-meta-box.php:39
 msgid "morkva NovaPay"
-msgstr "morkva NovaPay"
+msgstr ""
 
 #: includes/admin/class-mrkv-np-order-meta-box.php:73
 msgid "No NovaPay data yet. Waiting for postback."
-msgstr "Немає даних від NovaPay. Очікуємо postback."
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:252
 msgid "NovaPay"
-msgstr "NovaPay"
+msgstr ""
 
 #. %s: error message returned by NovaPay API
 #: includes/class-morkva-novapay-gateway.php:432
 #, php-format
 msgid "NovaPay payment error: %s"
-msgstr "NovaPay помилка платежу: %s"
+msgstr ""
 
 #. Description of the plugin
 msgid "NovaPay payment gateway for WooCommerce."
-msgstr "Інтеграція з платіжним сервісом NovaPay для WooCommerce."
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:11
 msgid "NovaPay payment gateway integration for WooCommerce."
-msgstr "Інтеграція з платіжним сервісом NovaPay для WooCommerce."
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:282
 msgid "NovaPay public key (PEM)"
-msgstr "Публічний ключ NovaPay (PEM)"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:284
 msgid "NovaPay public key, used to verify postback signatures."
 msgstr ""
-"Публічний ключ NovaPay, який використовується для підтвердження postback-"
-"підписів."
 
 #: includes/class-morkva-novapay-gateway.php:376
 msgid ""
 "NovaPay requires a valid Ukrainian mobile phone (e.g. +380XXXXXXXXX). Please "
 "update your contact phone and try again."
 msgstr ""
-"NovaPay вимагає валідний український номер телефону (напр. +380XXXXXXXXX). "
-"Виправіть, будь ласка, та спробуйте ще раз."
 
 #. %s: NovaPay session status code
 #: includes/api/class-mrkv-np-postback.php:192
 #, php-format
 msgid "NovaPay status update: %s"
-msgstr "Оновлення статусу NovaPay: %s"
+msgstr ""
 
 #: includes/api/class-mrkv-np-postback.php:174
 msgid "NovaPay: funds held, awaiting capture."
-msgstr "NovaPay: funds held, awaiting capture."
+msgstr ""
 
 #. %s: payment method (card, wallet, apple_pay, google_pay)
 #: includes/api/class-mrkv-np-postback.php:168
 #, php-format
 msgid "NovaPay: payment completed (%s)."
-msgstr "NovaPay: платіж виконано (%s)."
+msgstr ""
 
 #: includes/api/class-mrkv-np-postback.php:178
 msgid "NovaPay: payment failed."
-msgstr "NovaPay: payment failed."
+msgstr ""
 
 #: includes/api/class-mrkv-np-postback.php:186
 msgid "NovaPay: session expired."
-msgstr "NovaPay: session expired."
+msgstr ""
 
 #: includes/api/class-mrkv-np-postback.php:182
 msgid "NovaPay: session voided."
-msgstr "NovaPay: session voided."
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:319
 msgid "Only icon"
 msgstr ""
-"Лише іконка\n"
 
 #: includes/class-morkva-novapay-gateway.php:353
 #: includes/admin/class-mrkv-np-order-meta-box.php:50
 msgid "Order not found."
-msgstr "Замовлення не знайдено."
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:93
 msgid "Other free plugins"
-msgstr "Інші безкоштовні плагіни"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:259
 msgid ""
 "Pay securely with NovaPay. You will be redirected to NovaPay to complete the "
 "payment."
 msgstr ""
-"Платіть безпечно з NovaPay. Для завершення покупки вас перенаправить на "
-"сторінку оплати NovaPay."
 
 #: includes/admin/class-mrkv-np-order-meta-box.php:57
 msgid "Payment type"
-msgstr "Тип платежу"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:296
 msgid "Postback URL"
-msgstr "Postback URL"
+msgstr ""
 
 #: includes/admin/class-mrkv-np-order-meta-box.php:59
 msgid "Processing result"
-msgstr "Результат обробки"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:68
 msgid "review at"
-msgstr "відгуком на"
+msgstr ""
 
 #: includes/admin/class-mrkv-np-order-meta-box.php:60
 msgid "RRN"
-msgstr "RRN"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:277
 msgid ""
 "RSA private key issued for your merchant account. Used to sign API requests "
 "(header x-sign)."
 msgstr ""
-"Приватний RSA ключ вашого мерчанта. Використовується для підпису запитів до "
-"АРІ(header x-sign)."
 
 #: includes/admin/class-mrkv-np-order-meta-box.php:55
 msgid "Session ID"
-msgstr "ID сесії"
+msgstr ""
 
 #. %s — postback endpoint URL
 #: includes/class-morkva-novapay-gateway.php:300
@@ -308,45 +288,41 @@ msgid ""
 "Set this URL in your NovaPay merchant cabinet as the callback endpoint: "
 "<code>%s</code>"
 msgstr ""
-"Встановіть цей URL у вашому кабінеті NovaPay як callback endpoint (за "
-"потреби): <code>%s</code>"
 
 #: includes/class-morkva-novapay-gateway.php:459
 msgid "Shipping"
-msgstr "Доставка"
+msgstr ""
 
 #: includes/admin/class-mrkv-np-order-meta-box.php:56
 msgid "Status"
-msgstr "Статус"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:62
 msgid "Support our efforts with a"
-msgstr "Підтримайте наші зусилля"
+msgstr ""
 
 #: includes/admin/class-mrkv-np-order-meta-box.php:58
 msgid "Terminal"
-msgstr "Термінал"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:271
 msgid "Test environment uses merchant_id = 2."
-msgstr "Тестове середовище використовує merchant_id = 2."
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:262
 msgid "Test mode"
-msgstr "Тестовий режим"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:249
 msgid "Title"
-msgstr "Заголовок"
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:251
 msgid "Title shown to the customer at checkout."
-msgstr "Назва яку бачать покупці на сторінці оформлення."
+msgstr ""
 
 #: includes/class-morkva-novapay-gateway.php:265
 msgid ""
 "When enabled, requests are sent to https://api-qecom.novapay.ua. When "
 "disabled — to the production host https://api-ecom.novapay.ua."
 msgstr ""
-"Коли увімкнено, запити відправляються до тестового сервера https://api-qecom."
-"novapay.ua. Коли вимкнено — на \"прод\" https://api-ecom.novapay.ua."

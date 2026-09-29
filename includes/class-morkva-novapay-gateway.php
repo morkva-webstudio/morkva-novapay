@@ -5,6 +5,7 @@ class Mrkv_NovaPay_Gateway extends WC_Payment_Gateway {
 
 	public function __construct() {
 		$this->id                 = 'mrkv_novapay';
+		$this->icon = $this->get_admin_icon_url();
 		$this->has_fields         = false;
 		$this->method_title       = 'NovaPay by morkva';
 		$this->method_description = __( 'NovaPay payment gateway integration for WooCommerce.', 'morkva-novapay' );
@@ -20,6 +21,7 @@ class Mrkv_NovaPay_Gateway extends WC_Payment_Gateway {
 
 		add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, [ $this, 'process_admin_options' ] );
 		add_action( 'woocommerce_thankyou_' . $this->id, [ $this, 'sync_on_thankyou' ], 5 );
+		add_filter( 'woocommerce_gateway_icon', [$this, 'morkva_novapay_gateway_icon'], 100, 2 );
 	}
 
 	public function admin_options() {
@@ -157,6 +159,58 @@ class Mrkv_NovaPay_Gateway extends WC_Payment_Gateway {
         <?php
     }
 
+    function morkva_novapay_gateway_icon( $icon, $id ) 
+    {
+        if ( $id === 'mrkv_novapay' && !is_admin() ) 
+        {
+            if($this->get_option( 'hide_image' ) == 'no')
+            {
+                $height_btn = '';
+
+                if($this->get_option( 'novapay_image_height' )  != 'no' && $this->get_option( 'novapay_image_height' )  != '')
+                {
+                    $height_btn = 'style="width: auto; height: ' . $this->get_option( 'novapay_image_height' ) . 'px; padding-top: 0.6%;"';
+                }
+                else
+                {
+                    $height_btn = 'style="width: 100%; max-width: 100px; padding-top: 0"';
+                }
+
+                if($this->get_option( 'url_novapay_img' ))
+                {
+                    return '<img ' . $height_btn . ' src="' . $this->get_option( 'url_novapay_img' ) . '" > '; 
+                }
+                else
+                {
+                    if($this->get_option( 'novapay_image_type_black' ) != 'no')
+                    {
+                        return '<img ' . $height_btn . ' src="' . plugin_dir_url(MRKV_NOVAPAY_FILE) . 'assets/images/novapay-logo-white.svg' . '" > '; 
+                    }
+					elseif($this->get_option( 'novapay_image_type_mini' ) != 'no')
+                    {
+                        return '<img ' . $height_btn . ' src="' . plugin_dir_url(MRKV_NOVAPAY_FILE) . 'assets/images/novapay-logo-mini.svg' . '" > '; 
+                    }
+                    else
+                    {
+                        return '<img ' . $height_btn . ' src="' . plugin_dir_url(MRKV_NOVAPAY_FILE) . 'assets/images/novapay-logo-black.svg' . '" > '; 
+                    }
+                }
+            }
+        }
+        elseif($id === 'mrkv_novapay' && is_admin())
+        {
+            $admin_url = $this->get_admin_icon_url();
+            return '<img src="' . esc_url( $admin_url ) . '" alt="' . esc_attr( $this->title ) . '" style="max-width: 100px; height: auto;" />';
+        }
+        
+        return $icon;
+    }
+
+	public function get_admin_icon_url()
+    {
+        return plugin_dir_url(MRKV_NOVAPAY_FILE) . 'assets/images/novapay-logo-mini.svg';
+    }
+
 	public function sync_on_thankyou( $order_id ): void {
 		$order = wc_get_order( $order_id );
 		if ( ! $order || $order->is_paid() ) {
@@ -247,6 +301,43 @@ class Mrkv_NovaPay_Gateway extends WC_Payment_Gateway {
 					esc_url( Mrkv_NP_Postback::endpoint_url() )
 				),
 			],
+			'novapay_image_type_black' => array(
+                'title' => __( 'Image style', 'morkva-novapay' ),
+                'type' => 'checkbox',
+                'label' => __( 'For white background', 'morkva-novapay' ) . '<span></span><p style="padding: 20px;"><img style="width: 200px;" src="' . plugin_dir_url(MRKV_NOVAPAY_FILE) . 'assets/images/novapay-logo-black.svg"></p>',
+                'default' => 'yes'
+            ),
+            'novapay_image_type_white' => array(
+                'title' => '',
+                'type' => 'checkbox',
+                'label' => __( 'For black background', 'morkva-novapay' ) . '<span></span><p style="background: #676767; padding: 20px; border-radius: 10px;"><img style="width: 200px;" src="' . plugin_dir_url(MRKV_NOVAPAY_FILE) . 'assets/images/novapay-logo-white.svg"></p>',
+                'default' => 'no'
+            ),
+			'novapay_image_type_mini' => array(
+                'title' => '',
+                'type' => 'checkbox',
+                'label' => __( 'Only icon', 'morkva-novapay' ) . '<span></span><p style="padding: 20px;"><img style="width: 100px;" src="' . plugin_dir_url(MRKV_NOVAPAY_FILE) . 'assets/images/novapay-logo-mini.svg"></p>',
+                'default' => 'no'
+            ),
+            'novapay_image_height' => array(
+                'title' => __( 'Image height(px)', 'morkva-novapay' ),
+                'type' => 'number',
+                'label' => '',
+                'default' => ''
+            ),
+            'hide_image' => array(
+                'title' => __( 'Hide logo', 'morkva-novapay' ),
+                'type' => 'checkbox',
+                'label' => '<span>' . __( 'If checked, Novapay logo or custom logo will not be displayed by the payment method title', 'morkva-novapay' ) . '</span>',
+                'default' => 'no'
+            ),
+            'url_novapay_img' => array(
+                'title'       => __( 'Custom logo url', 'morkva-novapay' ),
+                'type'        => 'text',
+                'desc_tip'    => true,
+                'description' => __( 'Enter full url to image', 'morkva-novapay' ),
+                'default'     => '',
+            ),
 			'debug' => [
 				'title'   => __( 'Debug log', 'morkva-novapay' ),
 				'type'    => 'checkbox',
