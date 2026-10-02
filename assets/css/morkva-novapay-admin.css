@@ -7,7 +7,6 @@ label[for="woocommerce_mrkv_novapay_novapay_image_type_mini"]{
 }
 #woocommerce_mrkv_novapay_description,
 #woocommerce_mrkv_novapay_instructions,
-label[for="woocommerce_mrkv_novapay_liqpay_prro_enabled"],
 p.description
 {
 	max-width: 400px;
@@ -26,15 +25,15 @@ td label[for="woocommerce_mrkv_novapay-prepay_enabled"],
 td label[for="woocommerce_mrkv_novapay-prepay_hide_image"]{color: transparent;}
 .morkva-settings-sidebar img{width: 10px;}
 .morkva-settings-sidebar a img{    filter: brightness(100);}
-tr:has(#woocommerce_mrkv_novapay_liqpay_image_type_white) th, tr:has(#woocommerce_mrkv_novapay_liqpay_image_type_white) td,
-tr:has(#woocommerce_mrkv_novapay_liqpay_image_type_mini) th, tr:has(#woocommerce_mrkv_novapay_liqpay_image_type_mini) td,
-tr:has(#woocommerce_mrkv_novapay_liqpay_image_type_black) th, tr:has(#woocommerce_mrkv_novapay_liqpay_image_type_black) td{
+tr:has(#woocommerce_mrkv_novapay_novapay_image_type_white) th, tr:has(#woocommerce_mrkv_novapay_novapay_image_type_white) td,
+tr:has(#woocommerce_mrkv_novapay_novapay_image_type_mini) th, tr:has(#woocommerce_mrkv_novapay_novapay_image_type_mini) td,
+tr:has(#woocommerce_mrkv_novapay_novapay_image_type_black) th, tr:has(#woocommerce_mrkv_novapay_novapay_image_type_black) td{
     padding-top: 0;
     padding-bottom: 0;
     line-height: 1;
 }
-.form-table td fieldset label[for="woocommerce_mrkv_novapay_liqpay_image_type_white"],
-.form-table td fieldset label[for="woocommerce_mrkv_novapay-prepay_liqpay_image_type_white"]{
+.form-table td fieldset label[for="woocommerce_mrkv_novapay_novapay_image_type_white"],
+.form-table td fieldset label[for="woocommerce_mrkv_novapay-prepay_novapay_image_type_white"]{
     margin-top: -30px !important;
     margin-bottom: -52px !important;
 }

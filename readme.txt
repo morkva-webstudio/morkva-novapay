@@ -3,7 +3,7 @@ Contributors: bandido, dpmine
 Tags: woocommerce, novapay
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.2.2
+Stable tag: 0.2.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -63,6 +63,9 @@ Not in this release. Refunds are planned.
 On the order-received page the plugin queries NovaPay's `get-status` endpoint and updates the order accordingly, so the status is synced even when the server-to-server postback is delayed, blocked, or lost.
 
 == Changelog ==
+
+= 0.2.3 =
+* [fix] fixed version critical error  
 
 = 0.2.2 =
 * [new] added logo
